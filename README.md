@@ -7,6 +7,8 @@ Code, data and full results for the study
 The article is under review. The full reference, the authors and the article DOI will be added here after
 publication.
 
+Archived release (v1.0.0): https://doi.org/10.5281/zenodo.24282804
+
 The pipeline extracts fifteen interpretable color features from the 25,958 posters of the
 [MM-IMDb dataset](https://archive.org/details/mmimdb) (Arevalo et al. 2017), relates them to IMDb genre
 labels, and tests how far genre can be recovered from color alone.

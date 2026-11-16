@@ -1,0 +1,2 @@
+statistic,observed_value,n_permutations,p_value,n_films,n_genres
+Pillai's trace (multivariate regression of features on all genre indicators),0.2963854275932165,999,0.001,25958,19

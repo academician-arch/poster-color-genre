@@ -1,0 +1,59 @@
+IMPLEMENTATION DETAILS
+======================
+
+Image loading and resizing
+  PIL.Image.open(path).convert("RGB").resize((150, 150))  -- Pillow default resampling filter
+  for Image.resize (BICUBIC in Pillow >= 7.0); aspect ratio is NOT preserved (posters are
+  squeezed to a square). Pillow version: 9.5.0.
+
+HSV conversion
+  matplotlib.colors.rgb_to_hsv on RGB scaled to [0, 1]. Value = max(R, G, B); Saturation =
+  (max - min) / max; Hue in [0, 1) mapped to radians by theta = 2*pi*H.
+  NOTE: HSV Value is a computational (device-dependent) quantity, not perceived lightness.
+
+CIELAB (sensitivity analysis)
+  skimage.color.rgb2lab on sRGB scaled to [0, 1] (illuminant D65, 2-degree observer).
+  L* = lightness, C*ab = sqrt(a*^2 + b*^2) (chroma), h_ab = atan2(b*, a*).
+
+Grayscale conversion, entropy and contrast
+  Grayscale: direct weighted sum, NOT a library function:
+      Y = 0.2989*R + 0.5870*G + 0.1140*B      (ITU-R BT.601 luma weights, MATLAB rounding)
+  Input: uint8 RGB, 0-255. Output: float64, range 0-255.
+  Contrast: population standard deviation (numpy .std(), ddof = 0) of the float Y image.
+  Entropy: Y is truncated to uint8 (numpy astype(uint8), i.e. floor -> 256 integer levels),
+  then skimage.measure.shannon_entropy: probabilities = relative frequencies of the distinct
+  integer levels present in the image; H = -sum(p * log2(p)) (base 2, bits; maximum = 8).
+  scikit-image version: 0.21.0.
+
+Pseudocode
+      rgb   = resize(read_rgb(poster), 150, 150)                # uint8
+      Y     = 0.2989*rgb[:,:,0] + 0.5870*rgb[:,:,1] + 0.1140*rgb[:,:,2]
+      contrast = std(Y)
+      levels, counts = unique(floor(Y) as uint8)
+      p = counts / sum(counts);  entropy = -sum(p * log2(p))
+
+Dominant colour
+  k-means in RGB space on a random sample of up to 2000 pixels per poster; k = 5,
+  n_init = 4, random_state = 0 (scikit-learn KMeans). The centre of the most populous cluster
+  is the "primary dominant colour"; its share of the sampled pixels is dom1_proportion.
+  Pixel subsampling uses numpy default_rng(seed = 42 + IMDb id), so features are
+  reproducible per poster and independent of processing order.
+
+Warm-cool log-odds
+  warm = hue < 60 deg or hue > 300 deg; log((p_warm + 0.001) / (p_cool + 0.001)).
+
+SHAP
+  shap.TreeExplainer(model) with the default tree-path-dependent algorithm
+  (feature_perturbation = "tree_path_dependent"): no separate background data set; the
+  reference expectation is the training-data distribution encoded in the trees' cover.
+  Output scale for scikit-learn RandomForestClassifier: predicted class PROBABILITY
+  (average of the trees' leaf class proportions). A SHAP value is therefore a change in the
+  predicted probability of a genre relative to the mean predicted probability.
+  Single-label designs: one multi-class forest, SHAP values kept per class (genre).
+  Multi-label design: one binary forest per genre, SHAP values of the positive class.
+  Correlated predictors: path-dependent TreeSHAP splits credit among correlated features in
+  proportion to how the trees use them, so single-feature importances of correlated features
+  (e.g. mean_value and dom1_value) are not separately identifiable. We therefore also report
+  (i) the Spearman correlation matrix of the features and (ii) family-level importances,
+  i.e. mean |sum of SHAP values within a feature family|.
+  shap version: 0.49.1.

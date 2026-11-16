@@ -1,0 +1,2 @@
+statistic,observed,null_mean,null_sd,null_max,n_permutations,p_value,n_films_used,n_genres_used,n_trees
+"macro ROC AUC (binary-relevance Random Forest, 3-fold, labels permuted jointly per film)",0.6310304421707419,0.49825298801769,0.003395189583744063,0.5058881510128423,99,0.01,8000,19,100

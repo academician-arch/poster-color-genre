@@ -1,0 +1,21 @@
+{
+  "title": "Color-based genre signals in movie posters: code, data and results",
+  "upload_type": "software",
+  "description": "<p>Analysis pipeline, derived feature data and complete result tables and figures for the study &quot;The Syntax of Cinema Posters: Machine Learning Insights into Color-Based Genre Expectations&quot;. Fifteen interpretable color features (HSV and CIELAB) are extracted from the 25,958 posters of the MM-IMDb dataset and related to all IMDb genre labels with permutation tests, color-only classifiers and class-specific SHAP values, under five alternative genre definitions.</p>",
+  "creators": [
+    {
+      "name": "academician-arch"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "movie posters",
+    "film genre",
+    "color",
+    "CIELAB",
+    "explainable artificial intelligence",
+    "SHAP",
+    "MM-IMDb"
+  ],
+  "access_right": "open"
+}

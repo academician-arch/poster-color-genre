@@ -1,0 +1,22 @@
+definition_1,definition_2,quantity,spearman_rho_of_feature_ranking
+A0 submitted analysis,A first-listed,effect size,0.9964285714285712
+A0 submitted analysis,B multi-label,effect size,0.9214285714285713
+A0 submitted analysis,C single-genre films,effect size,0.5107142857142856
+A0 submitted analysis,D1 random label,effect size,0.932142857142857
+A0 submitted analysis,D2 rarest label,effect size,0.9571428571428571
+A first-listed,B multi-label,effect size,0.9249999999999998
+A first-listed,C single-genre films,effect size,0.5285714285714286
+A first-listed,D1 random label,effect size,0.9285714285714284
+A first-listed,D2 rarest label,effect size,0.9464285714285712
+B multi-label,C single-genre films,effect size,0.5535714285714285
+B multi-label,D1 random label,effect size,0.9464285714285712
+B multi-label,D2 rarest label,effect size,0.95
+C single-genre films,D1 random label,effect size,0.482142857142857
+C single-genre films,D2 rarest label,effect size,0.4035714285714285
+D1 random label,D2 rarest label,effect size,0.9464285714285712
+A0 submitted analysis,A first-listed,mean |SHAP|,0.9785714285714284
+A0 submitted analysis,B multi-label,mean |SHAP|,0.9214285714285713
+A0 submitted analysis,C single-genre films,mean |SHAP|,0.5678571428571427
+A first-listed,B multi-label,mean |SHAP|,0.8571428571428571
+A first-listed,C single-genre films,mean |SHAP|,0.5714285714285713
+B multi-label,C single-genre films,mean |SHAP|,0.5428571428571428

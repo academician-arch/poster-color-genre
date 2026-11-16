@@ -1,0 +1,11 @@
+field,value
+n_films_with_json_jpeg_genre,25959
+n_json_files,25960
+n_jpeg_files,25959
+source_url,https://archive.org/download/mmimdb/mmimdb.tar.gz
+dataset_reference,"Arevalo et al. (2017), MM-IMDb; archive.org/details/mmimdb"
+release_year_min,1891
+release_year_max,2016
+archive_bytes,8693248518
+archive_modified,2026-09-14T10:29:19
+archive_sha256,7facb412f84e8e707cf5c15bb58e4cf3ac12d33e6e944e1bdefebada1259a253

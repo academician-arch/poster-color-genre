@@ -1,0 +1,2 @@
+n_predictions_listed,n_testable,n_consistent,n_contradicted,n_inconclusive,sign_test_p_one_sided(consistent vs contradicted),CAUTION,n_shap_direction_matches
+14,14,13,0,1,0.0001220703125,"Predictions combine an assumed affective tone per genre with published colour-affect relations and were not preregistered. Agreement shows consistency between poster colour regularities / model behaviour and published associations, not viewers' cognitive processes.",14

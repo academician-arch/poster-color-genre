@@ -1,0 +1,2 @@
+strict_accuracy,any_label_accuracy,note
+0.3855421686746988,0.3855421686746988,any_label_accuracy: prediction counted correct if it matches ANY of the film's IMDb genre labels

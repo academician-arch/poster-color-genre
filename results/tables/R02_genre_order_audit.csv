@@ -1,0 +1,10 @@
+quantity,n,share
+films (total),25959,1.0
+films with a single genre label,5946,0.2290535074540622
+films with >= 2 genre labels,20013,0.7709464925459378
+"multi-label films, genre array order: alphabetical",17826,0.8907210313296358
+"multi-label films, genre array order: alphabetical_after_imdb_exceptions",1339,0.0669065107680008
+"multi-label films, genre array order: other_order",848,0.04237245790236346
+multi-label films: first label = alphabetically first label,18191,0.908959176535252
+multi-label films: first label is an IMDb ordering exception (Short/Animation/Documentary),2253,0.1125768250637086
+multi-label films: first label explained by alphabetical rule OR IMDb exception,19420,0.9703692599810123

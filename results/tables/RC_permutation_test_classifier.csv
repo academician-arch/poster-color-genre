@@ -1,0 +1,2 @@
+model,observed_macro_f1,n_permutations,p_value,chance_level,null_mean,null_max
+RandomForest,0.3123982834442632,199,0.005,0.2,0.1841206424728696,0.2007521961605309

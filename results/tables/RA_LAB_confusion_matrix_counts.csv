@@ -1,0 +1,11 @@
+true_genre,Documentary,Adventure,Crime,Animation,Action,Comedy,Drama,Horror,Biography,Fantasy
+Documentary,121,72,77,72,92,89,73,107,95,2
+Adventure,53,100,63,161,93,123,67,79,59,2
+Crime,75,69,100,49,116,83,84,153,70,1
+Animation,60,82,36,367,65,74,25,59,32,0
+Action,64,91,88,76,131,72,64,144,67,3
+Comedy,58,97,51,128,72,204,68,57,65,0
+Drama,90,76,84,81,82,90,121,86,89,1
+Horror,67,38,94,53,128,43,48,262,64,3
+Biography,70,65,88,72,102,95,99,105,101,2
+Fantasy,13,19,22,32,26,17,13,56,20,1
